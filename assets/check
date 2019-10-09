@@ -2,7 +2,4 @@
 
 set -e
 
-payload=$(mktemp /tmp/bundle-test)
-cat > $payload <&0
-
-echo '[{ "ref": "none",  "message": "Hello World!" }]' >&1
+echo '[{ "ref": "none",  "message": "Hello World!" }]'
