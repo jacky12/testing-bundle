@@ -2,5 +2,5 @@
 
 set -e
 
-payload=$(mktemp /tmp/bundle-test)
+payload=$(mktemp /tmp/bundle-test.XXXXXX)
 cat > $payload <&0
