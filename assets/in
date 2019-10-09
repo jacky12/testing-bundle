@@ -9,3 +9,5 @@ source_url=$(jq -r '.source.source_url' < $payload)
 credentials=$(jq -r '.source.credentials' < $payload)
 
 bundle config ${source_url} ${credentials}
+
+echo "{}"
