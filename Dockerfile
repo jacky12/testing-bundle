@@ -1,5 +1,8 @@
 FROM ruby:latest
 
+ADD assets /opt/resource
+RUN chmod +x /opt/resource/*
+WORKDIR /
 
 RUN set -eux; \
     export DEBIAN_FRONTEND=noninteractive; \
