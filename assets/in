@@ -4,6 +4,8 @@ set -e
 
 destination=$1
 
+echo "We expect the error invalid character W"
+
 payload=$(mktemp /tmp/bundle-test.XXXXXX)
 cat > ${payload} <&0
 
