@@ -12,6 +12,8 @@ credentials=$(jq -r '.source.credentials' < $payload)
 
 bundle config --local ${source_url} ${credentials}
 
-cp ".bundle/config" $destination
+mkdir ${destination}/.bundle
+
+cp ".bundle/config" ${destination}/.bundle
 
 echo "{}"
