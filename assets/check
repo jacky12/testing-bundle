@@ -5,4 +5,4 @@ set -e
 payload=$(mktemp /tmp/bundle-test.XXXXXX)
 cat > $payload <&0
 
-echo '[{ "ref": "none",  "message": "Hello World!" }]'
+echo '[{}]'
