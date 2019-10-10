@@ -4,26 +4,15 @@ set -e
 
 destination=$1
 
-echo "This is the destination"
-echo ${destination}
-
 payload=$(mktemp /tmp/bundle-test.XXXXXX)
 cat > ${payload} <&0
-
-echo "This is the payload"
-cat ${payload}
 
 source_url=$(jq -r '.source.source_url' < ${payload})
 credentials=$(jq -r '.source.credentials' < ${payload})
 
-echo "Executing bundle config"
 bundle config --local ${source_url} ${credentials}
 
-echo "Making directory"
 mkdir ${destination}/.bundle
 
-echo "Copying config file"
 cp ".bundle/config" ${destination}/.bundle
 
-echo "Outputting blank json"
-echo "{\"version\":{}}"
