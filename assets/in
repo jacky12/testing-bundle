@@ -2,12 +2,16 @@
 
 set -e
 
+destination=$1
+
 payload=$(mktemp /tmp/bundle-test.XXXXXX)
 cat > $payload <&0
 
 source_url=$(jq -r '.source.source_url' < $payload)
 credentials=$(jq -r '.source.credentials' < $payload)
 
-bundle config ${source_url} ${credentials}
+bundle config --local ${source_url} ${credentials}
+
+cp ".bundle/config" $destination
 
 echo "{}"
